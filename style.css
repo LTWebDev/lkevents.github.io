@@ -1,0 +1,459 @@
+/*********************************************
+                    GENERAL
+*********************************************/
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    font-family: 'Crete Round', serif;
+    background-color: #FEFEFF;
+}
+a {
+    text-decoration: none;
+}
+/*********************************************
+                    NAVBAR
+*********************************************/
+/*Fixing the size of the nav bar*/
+.nav {
+    height: 100px;
+    width: 100%;
+    position: relative;
+}
+/*Making sure its all inline*/
+.nav > .nav-header {
+    display: inline;
+}
+/*Fixing position of the logo*/
+.nav > .nav-header > .nav-title {
+    display: inline-block;
+    font-size: 22px;
+    color: #fff;
+    padding: 10px 10px 10px 10px;
+}
+/*Taking care of the Hamburger - not visible by default*/
+.nav > .nav-btn {
+    display: none;
+}
+/*Menu links on the right and position on list*/
+.nav > .nav-links {
+    display: inline;
+    float: right;
+    font-size: 18px;
+    line-height: 4em;
+}
+/*Menu links items style*/
+.nav > .nav-links > a {
+    display: inline-block;
+    padding: 13px 10px 13px 10px;
+    color: #313131;
+}
+/*Behavior when hovered*/
+.nav > .nav-links > a:hover {
+    background: -webkit-linear-gradient(yellow, red);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.nav > #nav-check {
+    display: none;
+}
+#logo {
+    width: 50%;
+}
+                /*******************
+                MEDIA QUERIES NAVBAR
+                *******************/
+/* On screens that are 600px wide or less, the nav bar changes = hamburger  */
+@media screen and (max-width:600px) {
+/*Position of the hamburger*/
+    .nav > .nav-btn {
+        display: inline-block;
+        position: absolute;
+        right: 10px;
+        top: 25%;
+    }
+/*Designing the hamburger instead of a picture*/
+    .nav > .nav-btn > label {
+        display: inline-block;
+        width: 50px;
+        height: 50px;
+        padding: 13px;
+        background-color: #100F17;
+    }
+/*Behavior when hovered*/
+    .nav > .nav-btn > label:hover {
+        background: -webkit-linear-gradient(yellow, red);
+    }
+    .nav > .nav-btn > label > span {
+        display: block;
+        width: 25px;
+        height: 10px;
+        border-top: 2px solid #eee;
+    }
+    .nav > .nav-links {
+        position: absolute;
+        display: block;
+        width: 100%;
+        background-color: white;
+        height: 0px;
+        transition: all 0.3s ease-in;
+        overflow-y: hidden;
+        top: 50px;
+        left: 0px;
+    }
+    .nav > .nav-links > a {
+        display: block;
+        width: 100%;
+    }
+    .nav > #nav-check:not(:checked) + .nav-links {
+        height: 0px;
+    }
+    .nav > #nav-check:checked + .nav-links {
+        height: calc(100vh - 50px);
+        overflow-y: auto;
+    }
+}
+/*********************************************
+                    HERO
+*********************************************/
+.hero-image {
+    background-image: url(images/bandeau-event-kravitz19.jpg);
+    height: 600px;
+    background-position: center;
+}
+.hero-text {
+    text-align: center;
+    line-height: 600px; 
+}
+.hero-btn {
+    color: #313131;
+    background-color: #FEFEFF;
+    padding: 10px 24px;
+    font-size: 1.2em;
+    text-decoration: none;
+    font-weight: bold;
+    background: #f1f1f1;
+    border-radius: 5px;
+    transition: 0.3s all;
+}
+.hero-btn:hover {
+    background: -webkit-linear-gradient(yellow, red);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: orange;
+    border: 1px solid orange;
+}
+/*********************************************
+                    LINKS
+*********************************************/
+.nav-sites {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+.nav-sites a {
+    color: #313131;
+    padding: 25px 10px 10px 10px;
+    font-size: 2em;
+    transition: 0.3s all;
+}
+.nav-sites a i:hover {
+    background: -webkit-linear-gradient(yellow, red);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+/*********************************************
+                    STORES
+*********************************************/
+                /*******************
+                MEDIA QUERIES NAVBAR
+                *******************/
+/*On screens that are 950px wide or less, pics are side by side*/
+@media screen and (max-width: 950px) {
+    #stores {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    }
+    .left-side {
+    margin: 0 auto 0px auto ;
+    width: 290px;
+    height: 170px;
+    background-image: url(images/vig1.jpg);
+    box-sizing: border-box;
+    border-radius: 5px;
+    border: 1px solid white;
+}
+.right-side{
+    margin: 0 auto 0 auto ;
+    width: 290px;
+    height: 170px;
+    background-image: url(images/vig2.jpg);
+    box-sizing: border-box;
+    border-radius: 5px;
+    border: 1px solid white;
+}
+.overlay {
+    background: linear-gradient(to right, rgba(0,0,0, 0.7), rgba(0,0,0,0));
+    height: 100%;
+    border-radius: 5px;
+}
+h4 {
+    margin: 0;
+    padding: 0;
+    color: white;
+    text-transform: uppercase;
+    text-align: left;
+    margin-left: 20px;
+    padding-top: 10px;
+    margin-bottom: 10px;
+}
+#stores hr {
+    width: 50%;
+    margin-left: 0;
+}
+small {
+    font-size: 13px;
+    color: white;
+    font-style: italic;
+    margin-left: 10px;
+}
+.store-button {
+    color: black;
+    background-color: white;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-left: 27px;
+    transition: 0.3s all;
+}
+.store-button:hover {
+    background: -webkit-linear-gradient(yellow, red);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: orange;
+    border: 1px solid orange;
+    }
+}
+/*On screens that are min 950px wide or more, pics are side by side + bigger*/
+@media screen and (min-width: 954px) {    
+    #stores {
+    background-color: black;
+    }
+    #stores  {
+    text-align: center;
+    }
+    .left-side {
+    display: inline-block;
+    width: 460px;
+    height: 257px;
+    margin-right: 30px;
+    background-image: url(images/vig1.jpg);
+    background-size:100%;
+    box-sizing: border-box;
+    border-radius: 5px;
+    border: 1px solid white;
+}
+.right-side{
+    display: inline-block;
+    width: 460px;
+    height: 257px;
+    background-image: url(images/vig2.jpg);
+    background-size:100%;
+    box-sizing: border-box;
+    border-radius: 5px;
+    border: 1px solid white;
+}
+.overlay {
+    background: linear-gradient(to right, rgba(0,0,0, 0.7), rgba(0,0,0,0));
+    height: 100%;
+    border-radius: 5px;
+}
+h4 {
+    margin: 0;
+    margin-left: 180px;
+    padding: 0;
+    color: white;
+    text-transform: uppercase;
+    text-align: left;
+    padding-top: 50px;
+    margin-bottom: 20px;
+}
+#stores hr {
+    width: 35%;
+}
+small {
+    font-size: 13px;
+    color: white;
+    font-style: italic;
+    text-align: left;
+    margin-left: 10px;
+}
+.store-button {
+    color: black;
+    background-color: white;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: 0.3s all;
+}
+.store-button:hover {
+    background: -webkit-linear-gradient(yellow, red);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: orange;
+    border: 1px solid orange;
+    }
+}
+/* On screens that are 650px wide or less, pics stacks */
+@media screen and (max-width: 579px) {
+#stores {
+    background-color: black;
+    display: flex;
+    flex-wrap: wrap;
+}
+.left-side {
+    margin: 0 auto 20px auto ;
+    width: 290px;
+    height: 170px;
+    background-image: url(images/vig1.jpg);
+    box-sizing: border-box;
+    border-radius: 5px;
+    border: 1px solid white;
+}
+.right-side{
+    margin: 0 auto 0px auto ;
+    width: 290px;
+    height: 170px;
+    background-image: url(images/vig2.jpg);
+    box-sizing: border-box;
+    border-radius: 5px;
+    border: 1px solid white;
+}
+.overlay {
+    background: linear-gradient(to right, rgba(0,0,0, 0.7), rgba(0,0,0,0));
+    height: 100%;
+    border-radius: 5px;
+}
+h4 {
+    margin: 0;
+    padding: 0;
+    color: white;
+    text-transform: uppercase;
+    text-align: left;
+    margin-left: 20px;
+    padding-top: 10px;
+    margin-bottom: 10px;
+}
+#stores hr {
+    width: 50%;
+    margin-left: 0;
+}
+small {
+    display: block;
+    text-align: left;
+    font-size: 13px;
+    color: white;
+    font-style: italic;
+    margin-left: 10px;
+}
+.store-button {
+    color: black;
+    background-color: white;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-left: 27px;
+    transition: 0.3s all;
+}
+.store-button:hover {
+    background: -webkit-linear-gradient(yellow, red);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: orange;
+    border: 1px solid orange;
+    }
+}
+/********************************************
+                    NEWSLETTER
+********************************************/
+#newsletter {
+    text-align: center;
+}
+hr {
+    width: 35%;
+}
+.form-inline {  
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+}
+.form-inline label {
+    color: #313131;
+    font-weight: bold;
+    margin: 5px 10px 5px 0;
+}
+.form-inline input {
+    vertical-align: middle;
+    margin: 5px 10px 5px 0;
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+}
+.form-inline button {
+    font-weight: bold;
+    padding: 10px 20px;
+    background-color: #313131;
+    border: 1px solid #ddd;
+    color: white;
+    cursor: pointer;
+}
+.form-inline button:hover {
+    background: -webkit-linear-gradient(yellow, red);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: orange;
+    border: 1px solid orange;
+}
+@media (max-width: 600px) {
+  .form-inline input {
+    margin: 10px 0;
+  }
+  .form-inline {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+/********************************************
+                    FOOTER
+********************************************/
+footer {
+    width: 100%;
+    background-color: black;
+    color: white;
+    text-align: center;
+    margin-top: 20px;
+}
+h1 {
+    padding: 10px 0 0 0;
+    margin: 0;
+    font-size: 16px;
+}
+h1:hover {
+    background: -webkit-linear-gradient(yellow, red);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+footer p {
+    margin: 0 ;
+    padding: 0 0 10px 0;
+    font-size: 12px;
+}
